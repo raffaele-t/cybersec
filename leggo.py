@@ -1,6 +1,6 @@
-nomefile = "logfile.txt"
+nnomefile = "logfile.txt"
     try:
-        f=open(nomefile, "r")
+        f=open(nomefile, "r", encoding='utf-8')
         righe=f.readlines()
         for riga in righe:
             print(riga, end='')
