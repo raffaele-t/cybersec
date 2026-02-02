@@ -4,15 +4,12 @@ host = '127.0.0.1'
 port = 6364
 server_socket.bind((host, port))
 server_socket.listen(1)
-print(f"Server listening on {host} : {port}")
-conn, addr = server_socket.accept()
-print(f"Connected by {addr}")
 #apertura file in scrittura
 f=open('logfile.txt', "w")
 f.write(f"Server listening on {host}:{port}\n")
 for i in range(6):
     conn, addr = server_socket.accept()
-    f.write(f"Connected ny {addr}\n")
+    f.write(f"Connected by {addr}\n")
     try:
         while True:
             data = conn.recv(1024)
